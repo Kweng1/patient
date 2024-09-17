@@ -37,16 +37,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $firstname_error = "Please enter your first name";
     }
     
-    // Validate last name
+
     if (empty($lastname)) {
         $lastname_error = "Please enter your last name";
     }
     
-    // Validate username
+
     if (empty($username)) {
         $username_error = "Please enter your username";
     } else {
-        // Check if username already exists
+ 
         $stmt = $conn->prepare("SELECT user_name FROM logintbl WHERE user_name = ?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
