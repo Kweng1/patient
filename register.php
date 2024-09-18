@@ -3,17 +3,8 @@
 ?>
 
 <?php
-// Initialize error variables
-$servername = "localhost"; 
-$username = "root"; 
-$password = ""; 
-$dbname = "noteapp"; 
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include_once 'includes/db_conn.php';
 
 $firstname_error = "";
 $lastname_error = "";

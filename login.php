@@ -26,18 +26,7 @@ $password_error = "Please enter your password";
 // Proceed with database validation only if there are no empty fields
 if (empty($username_error) && empty($password_error)) {
 // Connect to your database (replace the placeholders with your actual database credentials)
-$servername = "localhost";
-$db_username = "root";
-$db_password = "";
-$dbname = "noteapp";
-
-// Create connection
-$conn = new mysqli($servername, $db_username, $db_password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-die("Connection failed: " . $conn->connect_error);
-}
+include_once 'includes/db_conn.php';
 
 // Prepare SQL statement to fetch user by username
 $sql = "SELECT * FROM logintbl WHERE user_name = ?";

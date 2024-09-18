@@ -10,18 +10,7 @@ if (!isset($_SESSION["username"])) {
 }
 
 // Database connection configuration
-$servername = "localhost";
-$db_username = "root";
-$db_password = "";
-$dbname = "noteapp";
-
-// Create connection
-$conn = new mysqli($servername, $db_username, $db_password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include_once 'includes/db_conn.php';
 
 // Retrieve the logged-in user's username from the session
 $username = $_SESSION["username"];

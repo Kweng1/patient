@@ -1,20 +1,7 @@
 <?php
 session_start();
 
-// Database connection configuration
-$servername = "localhost";
-$db_username = "root";
-$db_password = "";
-$dbname = "noteapp";
-
-// Create connection
-$conn = new mysqli($servername, $db_username, $db_password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+include_once 'includes/db_conn.php';
 // Function to get user_id from username
 function getUserId($conn, $username) {
     $sql = "SELECT user_id FROM logintbl WHERE user_name = ?";

@@ -2,20 +2,7 @@
 
 session_start();
 
-// Database connection configuration
-$servername = "localhost";
-$db_username = "root";
-$db_password = "";
-$dbname = "noteapp";
-
-// Create connection
-$conn = new mysqli($servername, $db_username, $db_password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+include_once 'includes/db_conn.php';
 // Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the username, new password, and confirm password entered by the user
